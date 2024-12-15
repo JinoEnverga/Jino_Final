@@ -1,0 +1,1 @@
+export const API_ENDPOINT = 'https://backend-1-bcxe.onrender.com/api'
