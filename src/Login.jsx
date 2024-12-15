@@ -22,13 +22,13 @@ function Login() {
             const token = localStorage.getItem('token');
             if (token) {
                 try {
-                    const decoded = jwtDecode(JSON.parse(token)); // Use jwtDecode correctly
+                    const decoded = jwtDecode(token); // Decode token directly
                     if (decoded) {
                         navigate('/dashboard');
                     }
                 } catch (err) {
-                    console.error('Invalid token', err);
-                    localStorage.removeItem('token');
+                    console.error('Invalid token:', err.message);
+                    localStorage.removeItem('token'); // Remove invalid token
                 }
             }
         };
@@ -46,11 +46,12 @@ function Login() {
                 password,
             });
 
-            localStorage.setItem('token', JSON.stringify(response.data));
+            const { token } = response.data; // Extract token from response
+            localStorage.setItem('token', token); // Store only the token
             setError('');
             navigate('/dashboard');
         } catch (error) {
-            console.error('Login error:', error);
+            console.error('Login error:', error.response?.data || error.message);
             setError('Invalid username or password');
         }
     };
