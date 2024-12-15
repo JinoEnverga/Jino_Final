@@ -1,1 +1,1 @@
-export const API_ENDPOINT = 'https://backend-1-bcxe.onrender.com/api'
+export const API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT; 

@@ -50,7 +50,7 @@ function Register() {
             {/* Background Image */}
             <div 
                 style={{
-                    backgroundImage: `url('public/Pictures/BG.png')`,
+                    backgroundImage: `url('public/BG.png')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     minHeight: '100vh',
