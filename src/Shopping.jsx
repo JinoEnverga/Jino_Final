@@ -6,17 +6,16 @@ import { jwtDecode } from 'jwt-decode';
 function Shopping() {
     const [cart, setCart] = useState([]);
     const [darkMode, setDarkMode] = useState(() => {
-        // Initialize theme from localStorage or default to false
         return JSON.parse(localStorage.getItem('darkMode')) || false;
     });
     const [items] = useState([
-        { id: 1, name: 'Oppo A3X', price: 4399, image: 'public/Mp1.png' },
-        { id: 2, name: 'Infinix Note 30', price: 6599, image: 'public/Mp2.png' },
-        { id: 3, name: 'Fico Pro Ultra', price: 23999, image: 'public/Lt.png' },
-        { id: 4, name: 'M11 Turbo Fan', price: 678, image: 'public/M11_TurboFan.png' },
-        { id: 5, name: 'Kawes Electric Guitar', price: 3456, image: 'public/Kawes_EG.png' },
-        { id: 6, name: 'Xiomi TV A32', price: 8536, image: 'public/Xiomi_tva32.png' },
-        { id: 7, name: 'Lipstick', price: 100, image: 'public/Lipstick.png' }
+        { id: 1, name: 'Oppo A3X', price: 4399, image: '/Mp1.png' },
+        { id: 2, name: 'Infinix Note 30', price: 6599, image: '/Mp2.png' },
+        { id: 3, name: 'Fico Pro Ultra', price: 23999, image: '/Lt.png' },
+        { id: 4, name: 'M11 Turbo Fan', price: 678, image: '/M11_TurboFan.png' },
+        { id: 5, name: 'Kawes Electric Guitar', price: 3456, image: '/Kawes_EG.png' },
+        { id: 6, name: 'Xiomi TV A32', price: 8536, image: '/Xiomi_tva32.png' },
+        { id: 7, name: 'Lipstick', price: 100, image: '/Lipstick.png' }
     ]);
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
